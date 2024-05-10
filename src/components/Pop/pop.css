@@ -1,0 +1,73 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 39, 39, 0.5); /* semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.popup-content {
+    background-color: rgb(10, 10, 10);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(20, 20, 20, 0.3);
+    max-width: 80%;
+    width: 400px;
+}
+.comment-box{
+    height: 400px;
+}
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--sub-clr);
+    color: var(--para-clr);
+}
+.comment-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin: 1rem;
+}
+.create-input{
+    width: 90%;
+    padding: .5rem .8rem;
+    background-color: rgb(51, 49, 49);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.comment-text{
+    margin: 0;
+    padding: 0;
+}
+.comment-div{
+    margin: 4px;
+}
+.small{
+    font-size: .8rem;
+}
+.share-box{
+    display: flex;
+    gap: 5px;
+}
+
+.logout-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+}
+.logout-opt{
+    padding: 8px 12px;
+    cursor: pointer;
+}
