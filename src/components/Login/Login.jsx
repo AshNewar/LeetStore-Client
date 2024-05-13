@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { server } from "../../App";
 import { toast } from "react-hot-toast";
@@ -28,6 +28,13 @@ function Login() {
       toast.error(error.response.data.message)
     }
   };
+
+  useEffect(()=>{
+    const userData=localStorage.getItem('user');
+    if(userData){
+        navigate('/home');
+    }
+  },[]);
 
   return (
     <section className='loginpage'>

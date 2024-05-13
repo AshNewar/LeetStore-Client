@@ -7,7 +7,7 @@ import Register from './components/Login/Register';
 import { Toaster } from 'react-hot-toast';
 import Home from './components/Home/Home';
 
-export const server ="http://localhost:4040";
+export const server ="https://leetstore-server.onrender.com";
 
 const App = () => {
   return (

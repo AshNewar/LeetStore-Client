@@ -1,7 +1,6 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-
-import { useNavigate } from "react-router-dom";
+import { Audio } from 'react-loader-spinner'
 import {IoMdClose} from 'react-icons/io'
 import "./pop.css"
 import { useEffect, useState } from "react";
@@ -11,8 +10,10 @@ const CreatePop=({closeFunc , refreshFunc})=>{
     const [text,setText] = useState("");
     const [title,setTitle] = useState("");
     const [user,setUser] = useState({});
+    const [loading,setLoader] =useState(false);
     
     const submitHandler=async()=>{
+        setLoader(true);
         try {
             const {data} = await axios.post(`${server}/note/${user._id}/create`,
             {
@@ -32,16 +33,28 @@ const CreatePop=({closeFunc , refreshFunc})=>{
             console.log(error)
             toast.error(error.response.data.message)
         }
-        
+        setLoader(false);
       }
       useEffect(()=>{
+        setLoader(true);
         const userData=localStorage.getItem('user');
         if(userData){
             const parsedUserData = JSON.parse(userData);
             setUser(parsedUserData);
         }
+        setLoader(false)
     },[])
     return (
+        loading ? 
+        <Audio
+            height="80"
+            width="80"
+            radius="9"
+            color="green"
+            ariaLabel="three-dots-loading"
+            wrapperStyle
+            wrapperClass
+        /> :
         <div class="popup-overlay" id="popup">
             <div class="popup-content">
                 <div className="comment-head">
@@ -57,9 +70,6 @@ const CreatePop=({closeFunc , refreshFunc})=>{
                     className="create-input" placeholder="Write the Notes"/>
                     
                     <button className="save" onClick={submitHandler}>Save</button>
-
-
-
                 </div>
             </div>
         </div>
