@@ -13,11 +13,12 @@
 .home-box{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 1rem;
     border: 2px solid gray;
     border-radius: 10px;
+    align-items: center;
+    height: 80%;
+    overflow: scroll;
 }
 .home-search{
     display: flex;
