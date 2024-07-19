@@ -8,6 +8,8 @@ import { Toaster } from 'react-hot-toast';
 import Home from './components/Home/Home';
 
 export const server ="https://leetstore-server.onrender.com";
+// export const server ="http://localhost:4040";
+
 
 const App = () => {
   return (

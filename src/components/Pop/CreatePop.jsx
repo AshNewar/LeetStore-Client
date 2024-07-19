@@ -1,6 +1,6 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Audio } from 'react-loader-spinner'
+import {  Discuss } from 'react-loader-spinner'
 import {IoMdClose} from 'react-icons/io'
 import "./pop.css"
 import { useEffect, useState } from "react";
@@ -46,15 +46,20 @@ const CreatePop=({closeFunc , refreshFunc})=>{
     },[])
     return (
         loading ? 
-        <Audio
-            height="80"
-            width="80"
-            radius="9"
-            color="green"
-            ariaLabel="three-dots-loading"
-            wrapperStyle
-            wrapperClass
-        /> :
+        <div className="loader-container">
+            <Discuss
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="discuss-loading"
+  wrapperStyle={{}}
+  wrapperClass="discuss-wrapper"
+  color="#fff"
+  backgroundColor="#F4442E"
+  />
+  Creating Notes
+        </div>
+        :
         <div class="popup-overlay" id="popup">
             <div class="popup-content">
                 <div className="comment-head">
